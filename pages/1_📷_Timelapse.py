@@ -148,7 +148,11 @@ goes_rois = {
 
 import geopandas as gpd
 gdf = gpd.read_file("data/nzshp/Canterbury.shp")
-coordinates = gdf.loc[0].geometry.wkt
+# coordinates = gdf.loc[0].geometry.wkt
+lst = []
+for index, row in gdf.iterrows():
+    for pt in list(row['geometry'].exterior.coords): 
+        lst.append(list(pt))
 
 # features = []
 # for i in range(shapefile.shape[0]):
@@ -161,7 +165,9 @@ coordinates = gdf.loc[0].geometry.wkt
 
 
 landsat_rois = {
-    "Canterbury": coordinates,
+    "Canterbury": Polygon(lst
+        
+    ),
     "Dubai": Polygon(
         [
             [54.541626, 24.763044],
