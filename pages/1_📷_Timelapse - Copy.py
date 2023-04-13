@@ -20,20 +20,20 @@ def ee_authenticate(token_name="EARTHENGINE_TOKEN"):
     geemap.ee_initialize(token_name=token_name)
 
 
-st.sidebar.info(
-    """
-    - Web App URL: <https://streamlit.geemap.org>
-    - GitHub repository: <https://github.com/giswqs/streamlit-geospatial>
-    """
-)
+# st.sidebar.info(
+#     """
+#     - Web App URL: <https://streamlit.geemap.org>
+#     - GitHub repository: <https://github.com/giswqs/streamlit-geospatial>
+#     """
+# )
 
-st.sidebar.title("Contact")
-st.sidebar.info(
-    """
-    Qiusheng Wu: <https://wetlands.io>
-    [GitHub](https://github.com/giswqs) | [Twitter](https://twitter.com/giswqs) | [YouTube](https://www.youtube.com/c/QiushengWu) | [LinkedIn](https://www.linkedin.com/in/qiushengwu)
-    """
-)
+# st.sidebar.title("Contact")
+# st.sidebar.info(
+#     """
+#     Qiusheng Wu: <https://wetlands.io>
+#     [GitHub](https://github.com/giswqs) | [Twitter](https://twitter.com/giswqs) | [YouTube](https://www.youtube.com/c/QiushengWu) | [LinkedIn](https://www.linkedin.com/in/qiushengwu)
+#     """
+# )
 
 goes_rois = {
     "Creek Fire, CA (2020-09-05)": {
@@ -280,14 +280,14 @@ def app():
         collection = st.selectbox(
             "Select a satellite image collection: ",
             [
-                "Any Earth Engine ImageCollection",
-                "Landsat TM-ETM-OLI Surface Reflectance",
+                # "Any Earth Engine ImageCollection",
+                # "Landsat TM-ETM-OLI Surface Reflectance",
                 "Sentinel-2 MSI Surface Reflectance",
-                "Geostationary Operational Environmental Satellites (GOES)",
-                "MODIS Vegetation Indices (NDVI/EVI) 16-Day Global 1km",
-                "MODIS Gap filled Land Surface Temperature Daily",
-                "MODIS Ocean Color SMI",
-                "USDA National Agriculture Imagery Program (NAIP)",
+                # "Geostationary Operational Environmental Satellites (GOES)",
+                # "MODIS Vegetation Indices (NDVI/EVI) 16-Day Global 1km",
+                # "MODIS Gap filled Land Surface Temperature Daily",
+                # "MODIS Ocean Color SMI",
+                # "USDA National Agriculture Imagery Program (NAIP)",
             ],
             index=1,
         )
