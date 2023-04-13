@@ -146,16 +146,21 @@ goes_rois = {
 #     ),
 # }
 
+import geopandas as gpd
+shapefile = gpd.read_file("nzshp/nzl.shp")
+
+features = []
+for i in range(shapefile.shape[0]):
+    geom = shapefile.iloc[i:i+1,:] 
+    jsonDict = eval(geom.to_json()) 
+    geojsonDict = jsonDict['features'][0] 
+    features.append(ee.Feature(geojsonDict)) 
+
+roi = ee.FeatureCollection(features)
+
+
 landsat_rois = {
-    "Aral Sea": Polygon(
-        [
-            [57.667236, 43.834527],
-            [57.667236, 45.996962],
-            [61.12793, 45.996962],
-            [61.12793, 43.834527],
-            [57.667236, 43.834527],
-        ]
-    ),
+    "Canterbury": roi,
     "Dubai": Polygon(
         [
             [54.541626, 24.763044],
