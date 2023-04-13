@@ -148,7 +148,8 @@ goes_rois = {
 
 import geopandas as gpd
 shapefile = gpd.read_file("../data/nzshp/Canterbury.shp")
-
+from pathlib import Path 
+print(Path.cwd())
 features = []
 for i in range(shapefile.shape[0]):
     geom = shapefile.iloc[i:i+1,:] 
