@@ -154,9 +154,9 @@ for i in range(shapefile.shape[0]):
     geom = shapefile.iloc[i:i+1,:] 
     jsonDict = eval(geom.to_json()) 
     geojsonDict = jsonDict['features'][0] 
-    features.append(ee.Feature(geojsonDict)) 
+    features.append(geemap.ee.Feature(geojsonDict)) 
 
-landsat_rois = ee.FeatureCollection(features)
+landsat_rois = geemap.ee.FeatureCollection(features)
 
 
 # landsat_rois = {
