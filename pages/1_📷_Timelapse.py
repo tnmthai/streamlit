@@ -281,7 +281,7 @@ def app():
             "Select a satellite image collection: ",
             [
                 # "Any Earth Engine ImageCollection",
-                # "Landsat TM-ETM-OLI Surface Reflectance",
+                "Landsat TM-ETM-OLI Surface Reflectance",
                 "Sentinel-2 MSI Surface Reflectance",
                 # "Geostationary Operational Environmental Satellites (GOES)",
                 # "MODIS Vegetation Indices (NDVI/EVI) 16-Day Global 1km",
