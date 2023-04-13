@@ -148,7 +148,7 @@ goes_rois = {
 
 import geopandas as gpd
 gdf = gpd.read_file("data/nzshp/Canterbury.shp")
-coordinates = list(gdf.geometry.coords)
+coordinates = gdf.loc[0].geometry.wkt
 
 # features = []
 # for i in range(shapefile.shape[0]):
