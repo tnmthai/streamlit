@@ -5,7 +5,7 @@ st.set_page_config(layout="wide")
 
 st.sidebar.info(
     """
-    - Web App URL: https://lal.streamlit.app/
+    - Web App URL: https://lincolnagritech.streamlit.app/
    
     """
 )
@@ -22,7 +22,7 @@ st.title("Lincoln Agritech Geospatial Applications")
 
 st.markdown(
     """
-    This multipage app template demonstrates various interactive web apps created using [streamlit](https://streamlit.io) and [leafmap](https://leafmap.org). It is an open-source project and you are very welcome to contribute to the [GitHub repository](https://github.com/giswqs/streamlit-multipage-template).
+    An online interactive mapping tool to display basic vegetative metrics available over Canterbury.
     """
 )
 
