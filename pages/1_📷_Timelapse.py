@@ -148,7 +148,7 @@ goes_rois = {
 
 import geopandas as gpd
 shapefile = gpd.read_file("data/nzshp/Canterbury.shp")
-geom = shapefile.geometry.iloc[0]
+geom = shapefile.iloc[0]
 jsonDict = eval(geom.to_json()) 
 geojsonDict = jsonDict['features'][0] 
 
