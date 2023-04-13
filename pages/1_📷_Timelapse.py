@@ -148,8 +148,7 @@ goes_rois = {
 
 import geopandas as gpd
 shapefile = gpd.read_file("data/nzshp/Canterbury.shp")
-from pathlib import Path 
-print(Path.cwd())
+
 features = []
 for i in range(shapefile.shape[0]):
     geom = shapefile.iloc[i:i+1,:] 
@@ -157,21 +156,21 @@ for i in range(shapefile.shape[0]):
     geojsonDict = jsonDict['features'][0] 
     features.append(ee.Feature(geojsonDict)) 
 
-roi = ee.FeatureCollection(features)
+landsat_rois = ee.FeatureCollection(features)
 
 
-landsat_rois = {
-    "Canterbury": roi,
-    "Dubai": Polygon(
-        [
-            [54.541626, 24.763044],
-            [54.541626, 25.427152],
-            [55.632019, 25.427152],
-            [55.632019, 24.763044],
-            [54.541626, 24.763044],
-        ]
-    ),
-}
+# landsat_rois = {
+#     "Canterbury": roi,
+#     "Dubai": Polygon(
+#         [
+#             [54.541626, 24.763044],
+#             [54.541626, 25.427152],
+#             [55.632019, 25.427152],
+#             [55.632019, 24.763044],
+#             [54.541626, 24.763044],
+#         ]
+#     ),
+# }
 
 
 
