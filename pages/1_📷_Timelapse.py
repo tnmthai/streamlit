@@ -147,7 +147,7 @@ goes_rois = {
 # }
 
 import geopandas as gpd
-shapefile = gpd.read_file("../data/nzshp/nzl.shp")
+shapefile = gpd.read_file("../data/nzshp/Canterbury.shp")
 
 features = []
 for i in range(shapefile.shape[0]):
