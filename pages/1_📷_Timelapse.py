@@ -147,21 +147,15 @@ goes_rois = {
 # }
 
 import geopandas as gpd
-gdf = gpd.read_file("data/nzshp/Canterbury.shp")
-# coordinates = gdf.loc[0].geometry.wkt
+shp = gpd.read_file("data/nzshp/Canterbury.shp")
+gdf = shp.to_crs({'init': 'epsg:4326'}) 
+
 lst = []
 for index, row in gdf.iterrows():
     for pt in list(row['geometry'].exterior.coords): 
         lst.append(list(pt))
 
-# features = []
-# for i in range(shapefile.shape[0]):
-#     geom = shapefile.iloc[i:i+1,:] 
-#     jsonDict = eval(geom.to_json()) 
-#     geojsonDict = jsonDict['features'][0] 
-#     features.append(geemap.ee.Feature(geojsonDict)) 
 
-# landsat_rois = geemap.ee.FeatureCollection(features)
 
 
 landsat_rois = {
