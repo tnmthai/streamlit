@@ -293,7 +293,7 @@ def app():
         )
 
         if collection in [
-            "Landsat TM-ETM-OLI Surface Reflectance",
+            # "Landsat TM-ETM-OLI Surface Reflectance",
             "Sentinel-2 MSI Surface Reflectance",
         ]:
             roi_options = ["Uploaded GeoJSON"] + list(landsat_rois.keys())
