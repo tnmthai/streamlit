@@ -150,27 +150,31 @@ import geopandas as gpd
 shp = gpd.read_file("data/nzshp/Canterbury.shp")
 gdf = shp.to_crs({'init': 'epsg:4326'}) 
 
-lst = []
+can = []
 for index, row in gdf.iterrows():
     for pt in list(row['geometry'].exterior.coords): 
-        lst.append(list(pt))
+        can.append(list(pt))
 
+shp = gpd.read_file("data/nzshp/FarNorth.shp")
+gdf = shp.to_crs({'init': 'epsg:4326'}) 
 
+Mitimiti = []
+for index, row in gdf.iterrows():
+    for pt in list(row['geometry'].exterior.coords): 
+        Mitimiti.append(list(pt))
 
+shp = gpd.read_file("data/nzshp/Whakatane.shp")
+gdf = shp.to_crs({'init': 'epsg:4326'}) 
+
+Urewera = []
+for index, row in gdf.iterrows():
+    for pt in list(row['geometry'].exterior.coords): 
+        Urewera.append(list(pt))
 
 landsat_rois = {
-    "Canterbury": Polygon(lst
-        
-    ),
-    "Dubai": Polygon(
-        [
-            [54.541626, 24.763044],
-            [54.541626, 25.427152],
-            [55.632019, 25.427152],
-            [55.632019, 24.763044],
-            [54.541626, 24.763044],
-        ]
-    ),
+    "Canterbury": Polygon(can),
+    "Mitimiti": Polygon(  Mitimiti  ),
+    "Te Urewera": Polygon(  Urewera  ),
 }
 
 
