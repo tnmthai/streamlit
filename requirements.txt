@@ -3,6 +3,7 @@
 folium==0.13.0
 geemap[extra]
 geopandas
+fiona
 jupyter-server-proxy
 keplergl
 leafmap
