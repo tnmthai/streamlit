@@ -437,7 +437,7 @@ def app():
             with st.expander("Show dataset details", False):
                 st.markdown(
                     """
-                See the [Awesome GEE Community Datasets](https://samapriya.github.io/awesome-gee-community-datasets/projects/daily_lst/).
+                 See the [Awesome GEE Community Datasets](https://samapriya.github.io/awesome-gee-community-datasets/projects/daily_lst/).
                 """
                 )
 
@@ -580,10 +580,10 @@ def app():
 
     with row1_col1:
 
-        with st.expander(
-            "Steps: Draw a rectangle on the map -> Export it as a GeoJSON -> Upload it back to the app -> Click the Submit button. Expand this tab to see a demo 👉"
-        ):
-            video_empty = st.empty()
+        # with st.expander(
+        #     "Steps: Draw a rectangle on the map -> Export it as a GeoJSON -> Upload it back to the app -> Click the Submit button. Expand this tab to see a demo 👉"
+        # ):
+        #     video_empty = st.empty()
 
         data = st.file_uploader(
             "Upload a GeoJSON file to use as an ROI. Customize timelapse parameters and then click the Submit button 😇👇",
