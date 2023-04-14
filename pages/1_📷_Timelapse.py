@@ -586,7 +586,7 @@ def app():
         #     video_empty = st.empty()
 
         data = st.file_uploader(
-            "Upload a GeoJSON file to use as an ROI. Customize timelapse parameters and then click the Submit button 😇👇",
+            "Upload a GeoJSON file to use as an ROI. Customize timelapse parameters and then click the Submit button.",
             type=["geojson", "kml", "zip"],
         )
 
