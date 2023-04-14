@@ -2,7 +2,7 @@ from subprocess import Popen
 
 
 def load_jupyter_server_extension(nbapp):
-    """serve the streamlit Home"""
+    """serve the streamlit app"""
     Popen(
         [
             "streamlit",

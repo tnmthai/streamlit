@@ -28,7 +28,7 @@ st.sidebar.info(
 )
 
 
-st.title("Streamlit for Geospatial Applications")
+st.title("Lincoln Agritech Geospatial Applications")
 
 st.markdown(
     """
