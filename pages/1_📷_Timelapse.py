@@ -177,9 +177,6 @@ landsat_rois = {
     "Te Urewera": Polygon(  Urewera  ),
 }
 
-
-
-
 modis_rois = {
     "World": Polygon(
         [
@@ -266,14 +263,14 @@ def app():
 
     today = date.today()
 
-    st.title("Create Satellite Timelapse")
+    st.title("Satellite Timelapse")
 
-    st.markdown(
-        """
-        An interactive web app for creating [Landsat](https://developers.google.com/earth-engine/datasets/catalog/landsat)/[GOES](https://jstnbraaten.medium.com/goes-in-earth-engine-53fbc8783c16) timelapse for any location around the globe. 
-        The app was built using [streamlit](https://streamlit.io), [geemap](https://geemap.org), and [Google Earth Engine](https://earthengine.google.com). For more info, check out my streamlit [blog post](https://blog.streamlit.io/creating-satellite-timelapse-with-streamlit-and-earth-engine). 
-    """
-    )
+    # st.markdown(
+    #     """
+    #     An interactive web app for creating [Landsat](https://developers.google.com/earth-engine/datasets/catalog/landsat)/[GOES](https://jstnbraaten.medium.com/goes-in-earth-engine-53fbc8783c16) timelapse for any location around the globe. 
+    #     The app was built using [streamlit](https://streamlit.io), [geemap](https://geemap.org), and [Google Earth Engine](https://earthengine.google.com). For more info, check out my streamlit [blog post](https://blog.streamlit.io/creating-satellite-timelapse-with-streamlit-and-earth-engine). 
+    # """
+    # )
 
     row1_col1, row1_col2 = st.columns([2, 1])
 
@@ -292,7 +289,7 @@ def app():
             plugin_Draw=True,
             Draw_export=True,
             locate_control=True,
-            plugin_LatLngPopup=False,
+            plugin_LatLngPopup=False,center=(-43.525650, 172.639847), zoom=6.25,
         )
         m.add_basemap("ROADMAP")
 
