@@ -28,7 +28,7 @@ def nlcd():
     width = 950
     height = 600
 
-    Map = geemap.Map(center=[40, -100], zoom=4)
+    Map = geemap.Map(center=(-43.525650, 172.639847), zoom=6.25)
 
     # Select the seven NLCD epoches after 2000.
     years = ["2001", "2004", "2006", "2008", "2011", "2013", "2016", "2019"]
