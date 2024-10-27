@@ -17,7 +17,7 @@ geetoken = os.getenv("EARTHENGINE_TOKEN")
 
 @st.cache_data
 def ee_authenticate(token_name=geetoken):
-    geemap.ee_initialize(token_name=token_name)
+    geemap.ee_initialize(token_name=geetoken)
 
 
 # st.sidebar.info(
