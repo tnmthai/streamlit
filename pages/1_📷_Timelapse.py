@@ -13,10 +13,10 @@ from shapely.geometry import Polygon
 
 st.set_page_config(layout="wide")
 warnings.filterwarnings("ignore")
-
+geetoken = os.getenv("EARTHENGINE_TOKEN")
 
 @st.cache_data
-def ee_authenticate(token_name="EARTHENGINE_TOKEN"):
+def ee_authenticate(token_name=geetoken):
     geemap.ee_initialize(token_name=token_name)
 
 
