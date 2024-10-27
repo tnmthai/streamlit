@@ -13,9 +13,24 @@ from shapely.geometry import Polygon
 
 st.set_page_config(layout="wide")
 warnings.filterwarnings("ignore")
-geetoken = os.getenv("EARTHENGINE_TOKEN")
 
+gee_token = st.secrets["gee"]["token"]
 @st.cache_data
+
+def initialize_gee(token):
+    try:
+        ee.Initialize(ee.ServiceAccountCredentials(None, token))
+        st.success("Google Earth Engine initialized successfully!")
+    except Exception as e:
+        st.error("Error initializing GEE: Check your token or network connection.")
+        st.stop()
+
+if gee_token:
+    initialize_gee(gee_token)
+else:
+    st.error("GEE token is not found in Streamlit Secrets. Please check your configuration.")
+
+
 def ee_authenticate(token_name=geetoken):
     geemap.ee_initialize(token_name=geetoken)
 
@@ -283,7 +298,8 @@ def app():
     st.session_state["vis_params"] = None
 
     with row1_col1:
-        ee_authenticate(token_name="EARTHENGINE_TOKEN")
+        # ee_authenticate(token_name="EARTHENGINE_TOKEN")
+        initialize_gee(gee_token)
         m = geemap.Map(
             basemap="HYBRID",
             plugin_Draw=True,
